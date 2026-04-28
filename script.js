@@ -1,11 +1,14 @@
 
 /* CURSOR */
+
 const cur = document.getElementById('cur');
 const ph_time = document.getElementsByClassName('ph-time')
 setInterval(() =>
 {
     ph_time[0].innerHTML = new Date().toLocaleTimeString();
 }, 1000);
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+
 let mx = 0, my = 0, cx = 0, cy = 0;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY });
 (function loop() { cx += (mx - cx) * .13; cy += (my - cy) * .13; cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; requestAnimationFrame(loop) })();
